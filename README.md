@@ -41,6 +41,7 @@ export default {
         :is-callback="true"
         :visible.sync="visibleTopology"
         :upload-image="uploadImage"
+        @success="handleSuccess"
     ></topology-editor>
 </template>
 import {topologyEditor} from 'markdown-topology-editor'
@@ -52,7 +53,7 @@ export default {
         return {
             options : {},
             visibleTopology :false,
-            @success="handleSuccess"
+            
         }
     },
     methods:{
