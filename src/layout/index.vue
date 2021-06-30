@@ -28,7 +28,6 @@
         >
 
         </topology-body>
-        <remote-css href="//at.alicdn.com/t/font_2333202_x6t8cjdxjh.css"></remote-css>
         <remote-css href="//at.alicdn.com/t/font_2598515_r5t3uheph2a.css"></remote-css>
     </div>
 </template>
@@ -45,7 +44,7 @@
     import TopologyBody from '../packages/TopologyBody'
     import '../vendor/canvas2svg'
     import config from "../config";
-
+    import '../styles/css/index.css'
     export default {
         name: "TopologyLayout",
         components: {
@@ -113,11 +112,7 @@
             }
         },
         created() {
-            /*if(this.options !== null){
-                for (let key in this.options){
-                    this.config[key] = this.options[key];
-                }
-            }*/
+
         },
         watch: {
             visible(value) {

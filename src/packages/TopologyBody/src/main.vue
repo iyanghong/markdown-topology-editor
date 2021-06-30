@@ -92,7 +92,6 @@
         },
         mounted() {
             let canvasOptions = JSON.parse(JSON.stringify(this.config));
-            console.log(canvasOptions)
             canvasOptions.on = this.onMessage;
             this.canvas = new Topology(this.containerKey, canvasOptions);
             this.handleRefreshOptions();

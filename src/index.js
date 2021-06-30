@@ -1,9 +1,19 @@
 /**
  * Created by yh on 2021/6/27
  */
-import topologyEditorLayout from './layout'
-topologyEditorLayout.install = function (Vue) {
-    Vue.component('topology-editor',topologyEditorLayout);
+import topologyEditor from './layout'
+import markdownEditor from './layout/markdown'
+
+
+topologyEditor.install = function (Vue) {
+    Vue.component('topology-editor', topologyEditor);
 }
 
-export default topologyEditorLayout
+markdownEditor.install = function (Vue) {
+    Vue.component('markdown-editor', markdownEditor);
+}
+
+export {
+    topologyEditor,
+    markdownEditor
+}
