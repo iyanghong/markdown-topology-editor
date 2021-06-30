@@ -1,7 +1,7 @@
 {
   "name": "markdown-topology-editor",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -57,5 +57,22 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "一边写markdown的时候嵌入在线拓扑绘图",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iyanghong/markdown-topology-editor.git"
+  },
+  "keywords": [
+    "topology",
+    "markdown",
+    "editor"
+  ],
+  "author": "iyanghong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iyanghong/markdown-topology-editor/issues"
+  },
+  "homepage": "https://github.com/iyanghong/markdown-topology-editor#readme"
 }
