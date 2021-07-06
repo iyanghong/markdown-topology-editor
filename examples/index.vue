@@ -6,8 +6,8 @@
 <script>
     import {
         markdownEditor,
-    } from '../src/index'
-
+    } from '../lib/markdown-topology-editor.common'
+    import '../lib/markdown-topology-editor.css'
     export default {
         name: 'TopologyView',
         components: {
