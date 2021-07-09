@@ -161,6 +161,7 @@ Redo|恢复|-
 Copy|复制|-
 Cut|剪切|-
 Parse|粘贴|-
+Open|打开|data
 OpenFile|打开文件|-
 SaveCache|保存缓存|-
 ReadCache|读取缓存|-

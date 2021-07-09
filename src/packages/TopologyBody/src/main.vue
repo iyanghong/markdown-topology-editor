@@ -41,7 +41,6 @@
     import cache from "../../../utils/cache";
 
 
-
     export default {
         name: "TopologyBody",
         components: {
@@ -49,16 +48,16 @@
             CanvasContextMenu,
             TopologyToolsPanel
         },
-        props:{
-            uploadImage : {
-                type : Function,
-                default : null
+        props: {
+            uploadImage: {
+                type: Function,
+                default: null
             },
-            events : {
-                default : null
+            events: {
+                default: null
             }
         },
-        inject:['config'],
+        inject: ['config'],
         data() {
             return {
                 containerKey: 'topology-body-' + new Date().getTime(),
@@ -105,6 +104,7 @@
         watch: {
             events(data) {
                 if (data.name) {
+                    // console.log('handleEvent' + data.name)
                     if (this['handleEvent' + data.name]) {
                         this['handleEvent' + data.name](data.data)
                     }
@@ -250,7 +250,7 @@
                         if (key === 'bkImage') {
                             this.canvas.clearBkImg();
                             this.canvas.data[key] = data[key];
-                        }else if(key === 'scale'){
+                        } else if (key === 'scale') {
                             this.canvas.scaleTo(Number(data[key]));
                         } else {
                             this.canvas.data[key] = data[key];
@@ -318,14 +318,14 @@
                         options[key] = value;
                     }
                 }
-                if(!options.fileName){
+                if (!options.fileName) {
                     options.fileName = this.canvas.id;
                 }
                 this.canvasOptions = options;
-                this.$emit('updateData',this.canvasOptions);
+                this.$emit('updateData', this.canvasOptions);
             },
-            handleGetJson(){
-                if(this.canvas){
+            handleGetJson() {
+                if (this.canvas) {
                     return this.canvas.data;
                 }
                 return null;
@@ -334,7 +334,7 @@
                 this.handleChangeCanvas(data);
                 this.handleRefreshOptions();//刷新配置
             },
-            handleEventAutoWindowSize(){
+            handleEventAutoWindowSize() {
                 this.canvas.fitView(16);
                 this.handleRefreshOptions();//刷新配置
             },
@@ -348,6 +348,42 @@
             },
             handleEventSavePng(fileName) {
                 this.canvas.saveAsImage((fileName || this.canvasOptions.fileName) + '.png');
+            },
+            handleEventSaveSvg(fileName) {
+
+                // eslint-disable-next-line no-undef
+
+                // eslint-disable-next-line no-undef
+                const ctx = new C2S(this.canvas.canvas.width + 200, this.canvas.canvas.height + 200);
+                for (const item of this.canvas.data.pens) {
+                    item.render(ctx);
+                }
+
+                let mySerializedSVG = ctx.getSerializedSvg();
+                mySerializedSVG = mySerializedSVG.replace(
+                    '<defs/>',
+                    `<defs>
+    <style type="text/css">
+      @font-face {
+        font-family: 'topology';
+        src: url('http://at.alicdn.com/t/font_1331132_h688rvffmbc.ttf?t=1569311680797') format('truetype');
+      }
+    </style>
+  </defs>`
+                );
+
+                // mySerializedSVG = mySerializedSVG.replace(/--le5le--/g, '&#x');
+
+                const urlObject = window.URL || window;
+                const export_blob = new Blob([mySerializedSVG]);
+                const url = urlObject.createObjectURL(export_blob);
+
+                const a = document.createElement('a');
+                a.setAttribute('download', fileName || this.canvasOptions.fileName + '.svg');
+                a.setAttribute('href', url);
+                const evt = document.createEvent('MouseEvents');
+                evt.initEvent('click', true, true);
+                a.dispatchEvent(evt);
             },
             handleEventNew() {
                 this.canvas.open();
@@ -367,6 +403,17 @@
             },
             handleEventParse() {
                 this.canvas.parse();
+            },
+            handleEventOpen(data){
+                try {
+                    if(typeof data === 'string'){
+                        data = JSON.parse(data);
+                    }
+                    this.canvas.open(data);
+                    this.handleRefreshOptions();//刷新配置
+                } catch (e) {
+                    return false;
+                }
             },
             handleEventOpenFile() {
                 const input = document.createElement('input');
@@ -411,16 +458,16 @@
             handleToImage(type = 'file') {
                 return new Promise((resolve, reject) => {
                     if (this.canvas) {
-                        let imageUrl = this.canvas.toImage(10),image = null;
-                        if(!imageUrl || imageUrl === 'data:,'){
+                        let imageUrl = this.canvas.toImage(10), image = null;
+                        if (!imageUrl || imageUrl === 'data:,') {
                             reject({
                                 message: '无法保存空画布'
                             });
                             return;
                         }
-                        if(type === 'file'){
-                            image = this.handleBase64toFile(imageUrl,this.canvasOptions.fileName)
-                        }else {
+                        if (type === 'file') {
+                            image = this.handleBase64toFile(imageUrl, this.canvasOptions.fileName)
+                        } else {
                             image = imageUrl;
                         }
                         resolve(image);
