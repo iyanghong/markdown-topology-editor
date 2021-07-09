@@ -9,7 +9,7 @@
                         <div class="form-group">
                             <div class="form-item">
                                 <label>文件名</label>
-                                <div><input type="text" v-model="fileName" placeholder="文件名"></div>
+                                <div><input type="text" v-model="canvasData.fileName" placeholder="文件名"></div>
                             </div>
                         </div>
                         <div class="form-group">
