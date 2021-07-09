@@ -4,9 +4,9 @@
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "wc": "vue-cli-service build --mode production --target wc --name markdown-topology-editor --dest wc ./src/index.js --dashboard",
-    "wc-async": "vue-cli-service build --mode production --target wc-async --name markdown-topology-editor --dest wc-async ./src/index.js --dashboard",
+    "build": "vue-cli-service build --dest app ./src/index.js",
+    "wc": "vue-cli-service build --mode production --target wc --name markdown-topology-editor --dest wc ./src/index.js",
+    "wc-async": "vue-cli-service build --mode production --target wc-async --name markdown-topology-editor --dest wc-async ./src/index.js",
     "lib": "vue-cli-service build --target lib --name markdown-topology-editor --dest lib ./src/index.js",
     "lint": "vue-cli-service lint"
   },

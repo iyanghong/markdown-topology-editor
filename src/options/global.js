@@ -4,10 +4,10 @@
 
 
 import '../vendor/canvas2svg'
-import '../vendor/jszip.min'
-import '../vendor/marked.min'
-import '../vendor/777777'
-import '../vendor/rg'
+// import '../vendor/jszip.min'
+// import '../vendor/marked.min'
+// import '../vendor/777777'
+// import '../vendor/rg'
 
 /*
 import '../styles/css/common-icon.css'

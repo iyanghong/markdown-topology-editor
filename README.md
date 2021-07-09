@@ -92,6 +92,7 @@ grid|是否开启网格|Boolean|N|true、false|true
 rule|是否显示标尺|Boolean|N|true、false|true
 rotateCursor|鼠标图标路径|String|N|-|
 bkColor|背景颜色|String|N|-|#f8f8f8
+logo|图标|String|N|-|/favicon.ico
 
 
 ### <span id="props-uploadImage">UploadImage Function</span>
