@@ -18,7 +18,11 @@
                     @handleEvent="handleEvent"
                     :canvas-data="canvasData"
             ></topology-navigate-bar>
-            <topology-navigate-bar v-else></topology-navigate-bar>
+            <topology-navigate-bar
+                    v-else
+                    :canvas-data="canvasData"
+                    @handleEvent="handleEvent"
+            ></topology-navigate-bar>
         </slot>
         <topology-body
                 :events="events"
