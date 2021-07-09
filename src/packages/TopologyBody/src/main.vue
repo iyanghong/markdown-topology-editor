@@ -1,7 +1,7 @@
 <template>
 
     <div class="topology-body page">
-        <div class="tools">
+        <div class="tools" v-if="!isView">
             <topology-tools-panel
                     :tools="tools"
                     @toolDrag="onDrag"
@@ -9,7 +9,7 @@
 
         </div>
         <div :id="containerKey" class="full" @contextmenu="onContextMenu($event)"></div>
-        <div class="props" :style="props.expand ? 'overflow: visible' : ''">
+        <div v-if="!isView" class="props" :style="props.expand ? 'overflow: visible' : ''">
             <CanvasProps
                     :props.sync="props"
                     :options="canvasOptions"
@@ -20,7 +20,7 @@
                     @setPens="handleSetPens"
             ></CanvasProps>
         </div>
-        <div class="context-menu" v-if="contextmenu.left" :style="this.contextmenu">
+        <div class="context-menu" v-if="contextmenu.left && !isView" :style="this.contextmenu">
             <CanvasContextMenu :canvas="canvas" :props.sync="props"></CanvasContextMenu>
         </div>
     </div>
@@ -55,6 +55,17 @@
             },
             events: {
                 default: null
+            },
+            /**
+             * 默认打开数据，用props传递防止画布未渲染造成画布找不到问题
+             * */
+            defaultOpenData:{
+                type : Object,
+                default :null
+            },
+            isView:{
+                type : Boolean,
+                default : false
             }
         },
         inject: ['config'],
@@ -91,8 +102,22 @@
         },
         mounted() {
             let canvasOptions = JSON.parse(JSON.stringify(this.config));
+            if(this.isView){
+                canvasOptions.rule = 0;
+                canvasOptions.locked = 1;
+            }
             canvasOptions.on = this.onMessage;
             this.canvas = new Topology(this.containerKey, canvasOptions);
+            if(this.defaultOpenData !== null){
+                try {
+                    this.canvas.open(this.defaultOpenData)
+                }catch (e) {
+                    console.error(e)
+                }
+            }
+            if(this.isView){
+                this.handleChangeCanvas({locked : 1,rule :false});
+            }
             this.handleRefreshOptions();
             // this.open();
         },
