@@ -3,7 +3,7 @@
     <div class="topology-navigate-bar">
         <div class="navigate-bar-left">
             <div class="menu-item">
-                <el-image class="logo" src="/favicon.ico"></el-image>
+                <el-image class="logo" :src="logo"></el-image>
             </div>
             <dropdown
                     :icon-group="['el-icon-files','el-icon-caret-bottom']"
@@ -229,12 +229,14 @@
                 default : () => {return {}}
             }
         },
+        inject:['config'],
         data() {
             return {
                 autoReadCache: this.getAutoReadCache(),
                 lineNames: lineNames,
                 arrows: arrows,
-                lineWidth: this.canvasLineWidth || 1
+                lineWidth: this.canvasLineWidth || 1,
+                logo : this.config.logo
             }
         },
         computed: {
@@ -364,7 +366,7 @@
 
             },
             handleChangeLineWidth() {
-                console.log(this.lineWidth)
+                // console.log(this.lineWidth)
                 this.onMenu('ChangeState', {
                     lineWidth: this.lineWidth
                 });
