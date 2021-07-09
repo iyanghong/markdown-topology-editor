@@ -64,7 +64,7 @@
             if (this.dropdownWidth) {
                 this.dropdownStyle.width = this.dropdownWidth;
             }
-            console.log(this.iconGroup)
+            // console.log(this.iconGroup)
         },
         methods: {
             handleClick() {
