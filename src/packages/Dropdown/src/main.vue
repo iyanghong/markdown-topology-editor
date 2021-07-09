@@ -5,13 +5,14 @@
 
     >
         <div class="dropdown-title" @click="handleClick" :style="{'flex-direction':titleLayout}">
-            <slot name="title">
+            <slot v-if="$scopedSlots.title" name="title"></slot>
+            <template v-else>
                 <div class="icon-group" v-if="iconGroup.length > 0">
                     <i v-for="(icon,index) in iconGroup" :key="index" :class="icon"></i>
                 </div>
                 <i v-else-if="icon !== ''" :class="icon"></i>
                 <span :class="{'title':true,'title-left':iconGroup.length > 0} ">{{title}}</span>
-            </slot>
+            </template>
         </div>
         <div :class="{'dropdown':true,'active':active}" :style="dropdownStyle">
             <slot name="menus">
@@ -63,6 +64,7 @@
             if (this.dropdownWidth) {
                 this.dropdownStyle.width = this.dropdownWidth;
             }
+            console.log(this.iconGroup)
         },
         methods: {
             handleClick() {
