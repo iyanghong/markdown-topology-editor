@@ -1,10 +1,12 @@
 {
   "name": "markdown-topology-editor",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "wc": "vue-cli-service build --mode production --target wc --name markdown-topology-editor --dest wc ./src/index.js --dashboard",
+    "wc-async": "vue-cli-service build --mode production --target wc-async --name markdown-topology-editor --dest wc-async ./src/index.js --dashboard",
     "lib": "vue-cli-service build --target lib --name markdown-topology-editor --dest lib ./src/index.js",
     "lint": "vue-cli-service lint"
   },
@@ -60,6 +62,7 @@
     "not dead"
   ],
   "description": "一边写markdown的时候嵌入在线拓扑绘图",
+  "entry" : "src/index.js",
   "main": "lib/markdown-topology-editor.umd.min.js",
   "repository": {
     "type": "git",
