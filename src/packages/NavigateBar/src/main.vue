@@ -14,10 +14,10 @@
                     <div class="item" @click="onMenu('OpenFile')">打开<span>Ctrl + O</span></div>
                     <div class="item">导入<span>Ctrl + I</span></div>
                     <div class="item divider"></div>
-                    <div class="item">保存<span>Ctrl + S</span></div>
+                    <div class="item" @click="onMenu('SaveCache')">保存<span>Ctrl + S</span></div>
                     <div class="item" @click="onMenu('SaveJson')">下载JSON文件</div>
                     <div class="item" @click="onMenu('SavePng')">下载为PNG</div>
-                    <div class="item">下载为SVG</div>
+                    <div class="item" @click="onMenu('SaveSvg')">下载为SVG</div>
                 </template>
             </dropdown>
             <dropdown
