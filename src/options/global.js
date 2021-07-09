@@ -4,7 +4,6 @@
 
 
 import '../vendor/canvas2svg'
-import '../vendor/echarts.min'
 import '../vendor/jszip.min'
 import '../vendor/marked.min'
 import '../vendor/777777'
