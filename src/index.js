@@ -16,9 +16,9 @@ markdownEditor.install = function (Vue) {
 topologyView.install = function (Vue) {
     Vue.component('topology-view', topologyView);
 }
-
 export {
     topologyEditor,
     markdownEditor,
     topologyView
 }
+
