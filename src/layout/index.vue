@@ -4,12 +4,14 @@
             v-if="isCallback === false || (isCallback === true && show === true)"
             :style="{'top' : top}"
     >
-
         <slot
+                v-if="$scopedSlots.header"
                 name="header"
                 :is-callback="isCallback"
                 :canvas-data="canvasData"
         >
+        </slot>
+        <div v-else>
             <topology-navigate-bar
                     v-if="isCallback"
                     :is-callback="isCallback"
@@ -23,7 +25,7 @@
                     :canvas-data="canvasData"
                     @handleEvent="handleEvent"
             ></topology-navigate-bar>
-        </slot>
+        </div>
         <topology-body
                 :events="events"
                 :ref="topologyKey"
@@ -49,6 +51,7 @@
     import '../vendor/canvas2svg'
     import config from "../config";
     import '../styles/css/index.css'
+
     export default {
         name: "TopologyLayout",
         components: {
@@ -116,7 +119,6 @@
             }
         },
         created() {
-
         },
         watch: {
             visible(value) {
@@ -127,10 +129,10 @@
             }
         },
         methods: {
-            toImage(){
+            toImage() {
                 return this.$refs[this.topologyKey].handleToImage();
             },
-            getJson(){
+            getJson() {
                 return this.$refs[this.topologyKey].handleGetJson();
             },
             getConfig() {
@@ -141,7 +143,7 @@
                 }
                 return this.config;
             },
-            setConfig(config){
+            setConfig(config) {
                 this.$refs[this.topologyKey].handleEventChangeState(config);
             },
             handleSuccess() {
