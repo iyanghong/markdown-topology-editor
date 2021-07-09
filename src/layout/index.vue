@@ -135,6 +135,12 @@
             getJson() {
                 return this.$refs[this.topologyKey].handleGetJson();
             },
+            getImages(hasBaseResourcePath = true) {
+                return this.$refs[this.topologyKey].handleGetImages(hasBaseResourcePath);
+            },
+            refreshResourcesPath(plusBaseResourcePath = true){
+                return this.$refs[this.topologyKey].handleRefreshResourcesPath(plusBaseResourcePath);
+            },
             getConfig() {
                 if (this.options !== null) {
                     for (let key in this.options) {

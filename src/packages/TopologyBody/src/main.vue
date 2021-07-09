@@ -330,6 +330,57 @@
                 }
                 return null;
             },
+            handleGetImages(hasBaseResourcePath = true) {
+                let images = [];
+                if (this.canvas) {
+                    let bkImage = this.canvas.data.bkImage || this.canvas.options.bkImage;
+                    if (bkImage) {
+                        if(hasBaseResourcePath === false) {
+                            images.push(this.resolveBaseResourcePath(bkImage,false))
+                        }else {
+                            images.push(bkImage);
+                        }
+                    }
+                    for (let pen of this.canvas.data.pens) {
+                        if (pen.image) {
+                            if(hasBaseResourcePath === false) {
+                                images.push(this.resolveBaseResourcePath(pen.image,false))
+                            }else {
+                                images.push(pen.image);
+                            }
+                        }
+                    }
+                }
+                return images;
+            },
+            handleRefreshResourcesPath(plusBaseResourcePath = true){
+                let bkImage = this.canvas.data.bkImage || this.canvas.options.bkImage;
+                if (bkImage) {
+                    this.handleChangeCanvas(this.resolveBaseResourcePath(bkImage,plusBaseResourcePath));
+                }
+                for (let index in this.canvas.data.pens) {
+                    let pen = this.canvas.data.pens[index]
+                    if (pen && pen.image) {
+                        this.canvas.data.pens[index].image = this.resolveBaseResourcePath(pen.image,plusBaseResourcePath)
+                    }
+                }
+                this.canvas.render();
+            },
+            /**
+             * 图片路径操作
+             * @param {String} path 图片路径
+             * @param {Boolean} plus true：拼接根路径,false：移除根路径
+             * */
+            resolveBaseResourcePath(path, plus = false) {
+                if (!path) return path;
+                if (plus === true) {
+                    if (path.indexOf('http') > -1) return path;
+                    return this.config.resourcePath + path;
+                } else {
+                    if (path.indexOf('http') === -1) return path;
+                    return path.replace(this.config.resourcePath, '')
+                }
+            },
             handleEventChangeState(data) {
                 this.handleChangeCanvas(data);
                 this.handleRefreshOptions();//刷新配置
@@ -404,9 +455,9 @@
             handleEventParse() {
                 this.canvas.parse();
             },
-            handleEventOpen(data){
+            handleEventOpen(data) {
                 try {
-                    if(typeof data === 'string'){
+                    if (typeof data === 'string') {
                         data = JSON.parse(data);
                     }
                     this.canvas.open(data);

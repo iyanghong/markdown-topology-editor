@@ -1,8 +1,8 @@
 import Vue from 'vue'
 // import App from './markdown-editor.vue'
-import App from './markdown-editor-lib.vue'
+// import App from './markdown-editor-lib.vue'
 // import App from './topology-editor.vue'
-// import App from './topology-editor-lib.vue'
+import App from './topology-editor-lib.vue'
 
 
 Vue.config.productionTip = false
