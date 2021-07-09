@@ -154,7 +154,8 @@ handleEvent|触发画布事件[详情](#Events)|{name:EventName,data:EventData}
 ----|----|----
 AutoWindowSize|自适应窗口大小|-
 SaveJson|保存JSON文件|fileName
-SavePng|保存Svg|fileName
+SavePng|保存Png|fileName
+SaveSvg|保存Svg|fileName
 New|打开新画布|-
 Undo|撤销|-
 Redo|恢复|-
