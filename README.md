@@ -63,7 +63,23 @@ export default {
     }
 };
 ```
-
+使用topology-view来单独渲染预览绘图。**topology-view的API接口与topology-editor的API接口一致**
+```javascript
+<template>
+    <topology-view :data="data"/>
+</template>
+import {topologyView} from 'markdown-topology-editor'
+export default {
+    components: {
+        topologyView
+    },
+    data(){
+        return {
+            data : {}, 
+        }
+    },
+};
+```
 
 
 ## TopologyEditor API文档
@@ -76,7 +92,7 @@ isCallback|是否开启回调（即右上方的取消确定按钮）|Boolean|tru
 uploadImage|上传图片方法（格式详情[Upload Function](#props-uploadImage)）|Function|N|-|null 
 visible|是否显示|Boolean|N|true、false|true
 top|Body距离顶部位置（当自定义header的时候建议设置该属性）|Number|N|-|0
-
+defaultOpenData|默认打开数据|Object|N|-|null
 
 ### <span id="props-options">Options</span>
 参数|说明|类型|必选|可选值|默认值
@@ -93,6 +109,7 @@ rule|是否显示标尺|Boolean|N|true、false|true
 rotateCursor|鼠标图标路径|String|N|-|
 bkColor|背景颜色|String|N|-|#f8f8f8
 logo|图标|String|N|-|/favicon.ico
+valuePrecision|数值精度|Number|N|-|0
 
 
 ### <span id="props-uploadImage">UploadImage Function</span>
