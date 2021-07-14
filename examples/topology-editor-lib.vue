@@ -5,7 +5,7 @@
 <script>
     // import {topologyEditor} from '../lib/markdown-topology-editor.umd.min'
     // import '../lib/markdown-topology-editor.css'
-    import {topologyEditor} from '../wc/markdown-topology-editor.min'
+    import {topologyEditor} from '../lib/index'
     export default {
         name: 'MarkdownEditorLib',
         components: {

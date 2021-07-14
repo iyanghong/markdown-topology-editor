@@ -92,6 +92,7 @@
                                 <el-input-number
                                         class="form-item-number"
                                         v-model="data.lineWidth"
+                                        :precision="config.valuePrecision"
                                         controls-position="right"
                                         @change="handleChange"
                                         placeholder="线条宽度"
@@ -112,6 +113,7 @@
                                 <el-input-number
                                         class="form-item-number"
                                         v-model="data.borderWidth"
+                                        :precision="config.valuePrecision"
                                         controls-position="right"
                                         @change="handleChange"
                                         placeholder="线条宽度"
@@ -125,6 +127,7 @@
                                 <el-input-number
                                         class="form-item-number"
                                         v-model="data.globalAlpha"
+                                        :precision="config.valuePrecision"
                                         controls-position="right"
                                         @change="handleChange"
                                         placeholder="透明度"
@@ -153,6 +156,7 @@
                                     <el-input-number
                                             class="form-item-number"
                                             v-model="point.x"
+                                            :precision="config.valuePrecision"
                                             controls-position="right"
                                             @change="handleChange"
                                             placeholder="X"
@@ -164,6 +168,7 @@
                                     <el-input-number
                                             class="form-item-number"
                                             v-model="point.y"
+                                            :precision="config.valuePrecision"
                                             controls-position="right"
                                             @change="handleChange"
                                             placeholder="Y"
@@ -217,6 +222,7 @@
                                     <el-input-number
                                             class="form-item-number"
                                             v-model="data.from.x"
+                                            :precision="config.valuePrecision"
                                             controls-position="right"
                                             @change="handleChange"
                                             placeholder="X"
@@ -228,6 +234,7 @@
                                     <el-input-number
                                             class="form-item-number"
                                             v-model="data.from.y"
+                                            :precision="config.valuePrecision"
                                             controls-position="right"
                                             @change="handleChange"
                                             placeholder="Y"
@@ -285,6 +292,7 @@
                                     <el-input-number
                                             class="form-item-number"
                                             v-model="data.to.x"
+                                            :precision="config.valuePrecision"
                                             controls-position="right"
                                             @change="handleChange"
                                             placeholder="X"
@@ -296,6 +304,7 @@
                                     <el-input-number
                                             class="form-item-number"
                                             v-model="data.to.y"
+                                            :precision="config.valuePrecision"
                                             controls-position="right"
                                             @change="handleChange"
                                             placeholder="Y"
@@ -328,11 +337,15 @@
                         <div class="form-item">
                             <label>字体大小</label>
                             <div>
-                                <el-input
-                                        class="form-item-input"
-                                        size="mini"
+                                <el-input-number
+                                        class="form-item-number"
                                         v-model="data.fontSize"
-                                        @change="handleChange"></el-input>
+                                        :precision="0"
+                                        controls-position="right"
+                                        @change="handleChange"
+                                        placeholder="字体大小"
+                                        size="mini"
+                                ></el-input-number>
                             </div>
                         </div>
                         <div class="form-item">
@@ -406,6 +419,7 @@
                                 <el-input-number
                                         class="form-item-number"
                                         v-model="data.textMaxLine"
+                                        :precision="0"
                                         controls-position="right"
                                         @change="handleChange"
                                         placeholder="最大行数"
@@ -419,6 +433,7 @@
                                 <el-input-number
                                         class="form-item-number"
                                         v-model="data.textOffsetX"
+                                        :precision="config.valuePrecision"
                                         controls-position="right"
                                         @change="handleChange"
                                         placeholder="水平偏移"
@@ -432,6 +447,7 @@
                                 <el-input-number
                                         class="form-item-number"
                                         v-model="data.textOffsetY"
+                                        :precision="config.valuePrecision"
                                         controls-position="right"
                                         @change="handleChange"
                                         placeholder="垂直偏移"
@@ -547,6 +563,7 @@
             Collapse, Dropdown, JsonViewer, CodeEdit
         },
         mixins: [penMixin],
+        inject:['config'],
         props: {
             line: {
                 type: Object,

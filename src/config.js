@@ -48,6 +48,8 @@ export default {
      */
     bkColor: '#f8f8f8',
 
-    logo : '/favicon.ico'
+    logo : '/favicon.ico',
+
+    valuePrecision : 0
 
 }

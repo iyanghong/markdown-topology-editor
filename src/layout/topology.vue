@@ -30,6 +30,7 @@
                 :events="events"
                 :ref="topologyKey"
                 :uploadImage="uploadImage"
+                :default-open-data="defaultOpenData"
                 @updateData="handleUpdateCanvasData"
         >
 
@@ -97,7 +98,14 @@
             /** 添加top 防止预留被顶部nav遮挡 */
             top: {
                 default: 0
-            }
+            },
+            /**
+             * 默认打开数据，用props传递防止画布未渲染造成画布找不到问题
+             * */
+            defaultOpenData:{
+                type : Object,
+                default :null
+            },
         },
         data() {
             return {
@@ -186,7 +194,7 @@
         -webkit-font-smoothing: antialiased;
         box-sizing: border-box;
         line-height: 2;
-        z-index: 99999;
+        z-index: 999;
 
         *,
         *:before,
