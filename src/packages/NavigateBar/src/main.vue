@@ -383,7 +383,7 @@
         }
     }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
     .topology-navigate-bar {
         height: 50px;
         width: 100%;

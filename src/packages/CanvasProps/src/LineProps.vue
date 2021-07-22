@@ -1,5 +1,5 @@
 <template>
-    <el-tabs class="line-props-tabs" v-model="lineActive" :stretch="true">
+    <el-tabs class="topology-line-props-tabs" v-model="lineActive" :stretch="true">
         <el-tab-pane label="外观" name="appearance">
             <el-scrollbar class="tab-panel">
                 <collapse title="样式">
@@ -662,9 +662,9 @@
 <style lang="scss">
     @import "styles/main";
 </style>
-<style lang="scss" scoped>
+<style lang="scss">
 
-    .line-props-tabs {
+    .topology-line-props-tabs {
         .tab-panel {
             height: calc(100vh - 90px);
 

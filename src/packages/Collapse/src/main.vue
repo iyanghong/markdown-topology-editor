@@ -1,5 +1,5 @@
 <template>
-    <div class="collapse">
+    <div class="topology-collapse">
         <div class="collapse-title-panel" @click="handleCollapse">
             <div>
                 <span v-text="title"></span>
@@ -42,8 +42,8 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    .collapse {
+<style lang="scss">
+    .topology-collapse {
         background-color: #ffffff;
 
         * {

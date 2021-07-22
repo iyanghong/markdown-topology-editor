@@ -1,5 +1,5 @@
 <template>
-    <el-tabs class="node-props-tabs" v-model="nodeActive" :stretch="true">
+    <el-tabs class="topology-node-props-tabs" v-model="nodeActive" :stretch="true">
 
         <el-tab-pane label="外观" name="appearance">
             <el-scrollbar class="tab-panel tab-scrollbar-container" wrap-class="scrollbar-wrapper">
@@ -871,7 +871,7 @@
 <style lang="scss" scoped>
 
 
-    .node-props-tabs {
+    .topology-node-props-tabs {
         background-color: #ffffff;
 
         * {

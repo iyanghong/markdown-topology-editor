@@ -1,5 +1,5 @@
 <template>
-    <div class="menus">
+    <div class="menus topology-menus">
         <div>
             <a :class="{disabled:!props.node && !props.nodes}" @click="onTop()">置顶</a>
         </div>
@@ -129,10 +129,13 @@
             },
 
             onLock() {
-                this.props.locked = !this.props.locked
+                let props = JSON.parse(JSON.stringify(this.props));
+
+                props.locked = !this.props.locked
                 if (this.props.node) {
-                    this.props.node.locked = this.props.locked
+                    props.node.locked = this.props.locked
                 }
+                this.$emit('update:props', props)
                 if (this.props.nodes) {
                     for (const item of this.props.nodes) {
                         item.locked = this.props.locked
@@ -149,15 +152,15 @@
             onDel() {
                 this.canvas.delete()
             },
-            onCopyImage(){
+            onCopyImage() {
                 console.log('复制节点图标')
             }
         }
     }
 </script>
 
-<style lang="scss" scoped>
-    .menus {
+<style lang="scss">
+    .menus.topology-menus {
         color: #000;
         background-color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);

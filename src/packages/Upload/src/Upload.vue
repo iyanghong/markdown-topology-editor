@@ -1,5 +1,5 @@
 <template>
-	<div @click="toUpload" class="uploadFile-body">
+	<div @click="toUpload" class="topology-upload-file-body">
 		<input type="file" class="uploadFile" ref="uploadFile" @change="upload" />
 		<div>
 			<div class="progress-wrapper-panel" v-if="uploadIng">
@@ -15,9 +15,9 @@
 </template>
 
 <script>
-	import {
+	/*import {
 		Message
-	} from 'element-ui' //提示框
+	} from 'element-ui' //提示框*/
 export default {
 	name : 'Upload',
 	props: {
@@ -63,11 +63,12 @@ export default {
 		},
 		upload() {
 			if(this.uploadImage === null){
-				Message({
+				/*Message({
 					message: '暂未开启图片上传',
 					type: 'error',
 					duration: 5 * 1000
-				});
+				});*/
+				alert('暂未开启图片上传');
 				console.error('暂未开启图片上传')
 				return false;
 			}
@@ -103,54 +104,55 @@ export default {
 };
 </script>
 
-<style scoped>
-.uploadFile-body {
+<style lang="scss">
+.topology-upload-file-body {
 	cursor: pointer;
 	position: relative;
+	.uploadFile {
+		position: fixed;
+		top: -200px;
+		left: -200px;
+	}
+	.progress-wrapper-panel{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(255,255,255,.9);
+	}
+	.progress-wrapper {
+		position: relative;
+		width: 90%;
+		top: 50%;
+		margin: -10px auto 0 auto;
+		height: 10px;
+		border-radius: 5px;
+		background-color: lightgrey;
+	}
+	.progress-wrapper .progress-progress {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 0%;
+		border-radius: 5px;
+		background-color: #3DE1AD;
+		z-index: 1;
+	}
+	.progress-wrapper .progress-rate {
+		position: absolute;
+		top: 0px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		font-size: 14px;
+		line-height: 10px;
+		height: 100%;
+		z-index: 2;
+	}
 }
 
-.uploadFile {
-	position: fixed;
-	top: -200px;
-	left: -200px;
-}
-.progress-wrapper-panel{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(255,255,255,.9);
-}
-.progress-wrapper {
-	position: relative;
-	width: 90%;
-	top: 50%;
-	margin: -10px auto 0 auto;
-	height: 10px;
-	border-radius: 5px;
-	background-color: lightgrey;
-}
-.progress-wrapper .progress-progress {
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 0%;
-	border-radius: 5px;
-	background-color: #3DE1AD;
-	z-index: 1;
-}
-.progress-wrapper .progress-rate {
-	position: absolute;
-	top: 0px;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	text-align: center;
-	font-size: 14px;
-	line-height: 10px;
-	height: 100%;
-	z-index: 2;
-}
+
 </style>

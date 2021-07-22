@@ -28,10 +28,11 @@
 
 <script>
     import '../../../options/global'
-    import {Topology,} from '@topology/core';
-    import {saveAs} from 'file-saver'
+    import {Topology} from '@topology/core';
+    // import {Topology} from '../../../packages/ClassDiagram';
+    // import {saveAs} from 'file-saver'
 
-    import {Tools, canvasRegister} from '../../../options/canvas';
+    import {Tools, canvasRegister,saveAs} from '../../../options/canvas';
 
 
     import CanvasProps from '../../../packages/CanvasProps';

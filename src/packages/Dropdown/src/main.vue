@@ -1,6 +1,6 @@
 <template>
     <div
-            :class="{'ts-dropdown':true,'active-method-hover' : activeMethod === 'hover'}"
+            :class="{'ts-dropdown topology-dropdown':true,'active-method-hover' : activeMethod === 'hover'}"
 
 
     >
@@ -82,8 +82,8 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    .ts-dropdown {
+<style lang="scss">
+    .ts-dropdown.topology-dropdown {
         position: relative;
         display: flex;
         flex-direction: column;

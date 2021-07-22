@@ -55,7 +55,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .topology-tools-panel {
         height: calc(100vh - 40px);
         * {

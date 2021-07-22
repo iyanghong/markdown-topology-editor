@@ -1,5 +1,5 @@
 <template>
-    <div class="props-container">
+    <div class="topology-props-container">
         <!-- 选中为空 -->
         <template v-if="!props.node && !props.line && !props.multi">
             <el-tabs v-model="noNodeActive" :stretch="true">
@@ -82,34 +82,7 @@
                     </div>
                 </el-tab-pane>
                 <el-tab-pane label="布局" name="layout">
-                    <!--<el-scrollbar class="tab-panel">
-                        <div class="form-group">
-                            <div class="form-item">
-                                <label>画布宽度</label>
-                                <div>
-                                    <el-input-number
-                                            class="form-item-number"
-                                            v-model="canvasData.width"
-                                            controls-position="right"
-                                            placeholder="画布宽度"
-                                            size="mini"
-                                    ></el-input-number>
-                                </div>
-                            </div>
-                            <div class="form-item">
-                                <label>画布高度</label>
-                                <div>
-                                    <el-input-number
-                                            class="form-item-number"
-                                            v-model="canvasData.height"
-                                            controls-position="right"
-                                            placeholder="画布高度"
-                                            size="mini"
-                                    ></el-input-number>
-                                </div>
-                            </div>
-                        </div>
-                    </el-scrollbar>-->
+
                 </el-tab-pane>
                 <el-tab-pane label="结构" name="structure">
                     <div class="tab-panel structure-panel" v-if="pens">
@@ -264,17 +237,17 @@
 </script>
 
 <style lang="scss">
-    .props-container .el-tabs__content, .props-container .el-tab-pane {
+    .topology-props-container .el-tabs__content, .topology-props-container .el-tab-pane {
         min-height: calc(100vh - 100px);
     }
     .el-color-dropdown.el-color-picker__panel{
         z-index: 99999 !important;
     }
-    .props-container .tab-panel {
+    .topology-props-container .tab-panel {
 
     }
 </style>
-<style lang="scss" scoped>
+<style lang="scss">
     @import "styles/main";
 
     .upload-images {

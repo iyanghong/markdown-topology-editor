@@ -1,5 +1,5 @@
 <template>
-    <div class="code-edit" v-if="show">
+    <div class="topology-code-edit" v-if="show">
         <div class="code-edit-title">
             <span>编辑</span>
             <div class="btn-panel">
@@ -85,15 +85,15 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    .code-edit {
+<style lang="scss">
+
+    .topology-code-edit {
         position: fixed;
         width: 50vw;
         height: 70vh;
         top: 50%;
         left: 50%;
-        margin-top: -35vh;
-        margin-left: -25vw;
+        transform: translate(-50%,-50%);
         background-color: #ffffff;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
         border-radius: 5px;
