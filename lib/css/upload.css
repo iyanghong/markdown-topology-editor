@@ -1,0 +1,49 @@
+.topology-upload-file-body {
+  cursor: pointer;
+  position: relative;
+}
+.topology-upload-file-body .uploadFile {
+    position: fixed;
+    top: -200px;
+    left: -200px;
+}
+.topology-upload-file-body .progress-wrapper-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+.topology-upload-file-body .progress-wrapper {
+    position: relative;
+    width: 90%;
+    top: 50%;
+    margin: -10px auto 0 auto;
+    height: 10px;
+    border-radius: 5px;
+    background-color: lightgrey;
+}
+.topology-upload-file-body .progress-wrapper .progress-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    border-radius: 5px;
+    background-color: #3DE1AD;
+    z-index: 1;
+}
+.topology-upload-file-body .progress-wrapper .progress-rate {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 10px;
+    height: 100%;
+    z-index: 2;
+}
+

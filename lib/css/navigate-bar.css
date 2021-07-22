@@ -1,0 +1,247 @@
+.ts-dropdown.topology-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.ts-dropdown.topology-dropdown .dropdown-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+.ts-dropdown.topology-dropdown.ts-dropdown-group {
+    text-align: left;
+}
+.ts-dropdown.topology-dropdown .icon-group {
+    line-height: 25px;
+    height: 25px;
+}
+.ts-dropdown.topology-dropdown i {
+    line-height: 25px;
+}
+.ts-dropdown.topology-dropdown.active-method-hover:hover .dropdown {
+    display: block;
+}
+.ts-dropdown.topology-dropdown:hover {
+    color: #1E9FFF;
+}
+.ts-dropdown.topology-dropdown span.title {
+    font-size: 12px;
+    line-height: 1em;
+}
+.ts-dropdown.topology-dropdown span.title.title-left {
+      text-align: left;
+}
+.ts-dropdown.topology-dropdown svg {
+    height: 15px;
+}
+.ts-dropdown.topology-dropdown .dropdown {
+    position: absolute;
+    display: none;
+    width: auto;
+    min-width: calc(100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    background-color: #fff;
+    padding: 8px 0;
+    left: 0;
+    top: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ts-dropdown.topology-dropdown .dropdown.active {
+      display: block;
+}
+.ts-dropdown.topology-dropdown .dropdown .item {
+      line-height: 30px;
+      padding: 0 15px;
+      font-size: 13px;
+      color: #595959;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 30px;
+      box-sizing: border-box;
+}
+.ts-dropdown.topology-dropdown .dropdown .item.hover:hover {
+        background-color: #f8f8f8;
+}
+.ts-dropdown.topology-dropdown .dropdown .item:hover {
+        color: #1E9FFF;
+}
+.ts-dropdown.topology-dropdown .dropdown .item.divider {
+        width: calc(100% - 30px);
+        height: 0.5px;
+        background-color: #e5e5e5;
+        margin: 5px 15px;
+}
+
+.topology-navigate-bar {
+  height: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+.topology-navigate-bar.no-login {
+    text-align: center;
+}
+.topology-navigate-bar .login-panel {
+    font-size: 12px;
+    line-height: 50px;
+    margin: 0 auto;
+}
+.topology-navigate-bar .login-panel span {
+      color: #1E9FFF;
+      cursor: pointer;
+}
+.topology-navigate-bar .login-panel span:hover {
+        text-decoration: underline;
+}
+.topology-navigate-bar * {
+    box-sizing: border-box;
+}
+.topology-navigate-bar .scale-item {
+    /*i{
+            margin-left: 10px;
+        }*/
+}
+.topology-navigate-bar .scale-item .btn-icon {
+      border: 1px solid transparent;
+}
+.topology-navigate-bar .menu-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15px;
+    text-align: center;
+    cursor: pointer;
+}
+.topology-navigate-bar .menu-item span.icon-title {
+      font-size: 12px;
+      line-height: 25px;
+}
+.topology-navigate-bar .menu-item .btn-auto-read-cache {
+      margin-top: 5px;
+}
+.topology-navigate-bar .navigate-bar-left {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    min-width: 10px;
+}
+.topology-navigate-bar .navigate-bar-left .logo {
+      height: 36px;
+      width: 36px;
+}
+.topology-navigate-bar .navigate-bar-middle {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 10px;
+}
+.topology-navigate-bar .navigate-bar-middle * {
+      box-sizing: border-box;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-callback {
+      width: 160px;
+      height: 52px;
+      display: flex;
+      flex-wrap: nowrap;
+      transform: perspective(2em) rotateX(-10deg);
+      margin: 0 20px;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-callback > div {
+        width: 80px;
+        height: 100%;
+        text-align: center;
+        cursor: pointer;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-callback > div > span {
+          font-size: 12px;
+          color: #ffffff;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-callback > div:hover {
+          opacity: 0.5;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-callback .btn-cancel {
+        background-color: #F56C6C;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-callback .btn-success {
+        background-color: #67C23A;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-middle-title {
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-middle-title div:first-child {
+        height: 20px;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-middle-title div:nth-child(2) {
+        height: 12px;
+        line-height: 12px;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-middle-title svg {
+        width: 40px;
+        height: 15px;
+        line-height: 25px;
+}
+.topology-navigate-bar .navigate-bar-middle .navigate-bar-middle-title .title {
+        line-height: 12px;
+}
+.topology-navigate-bar .navigate-bar-middle .line-item {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      padding: 5px 12px;
+}
+.topology-navigate-bar .navigate-bar-middle .line-item div:first-child {
+        min-width: 80px;
+        text-align: left;
+        line-height: 20px;
+}
+.topology-navigate-bar .navigate-bar-middle .line-item div:nth-child(2) {
+        width: 60px;
+        text-align: right;
+}
+.topology-navigate-bar .navigate-bar-middle .line-item div:nth-child(2) svg {
+          width: 60px;
+}
+.topology-navigate-bar .navigate-bar-middle .btn-lock-canvas {
+      display: flex;
+      flex-direction: column;
+      width: 60px;
+      text-align: center;
+      cursor: pointer;
+      justify-content: center;
+}
+.topology-navigate-bar .navigate-bar-middle .btn-lock-canvas > div {
+        width: 100%;
+}
+.topology-navigate-bar .navigate-bar-middle .btn-lock-canvas .btn-lock-icon {
+        height: 25px;
+        line-height: 25px;
+}
+.topology-navigate-bar .navigate-bar-middle .btn-lock-canvas .btn-lock-title {
+        height: 12px;
+        line-height: 12px;
+        font-size: 12px;
+}
+.topology-navigate-bar .navigate-bar-middle .btn-lock-canvas.is-lock {
+        color: #E6A23C;
+}
+.topology-navigate-bar .navigate-bar-middle .btn-lock-canvas:hover {
+        color: #1E9FFF;
+}
+

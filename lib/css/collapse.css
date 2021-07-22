@@ -1,0 +1,29 @@
+.topology-collapse {
+  background-color: #ffffff;
+  /*margin: 10px 0;*/
+  border-bottom: 1px solid #e5e5e5;
+}
+.topology-collapse * {
+    outline: none;
+}
+.topology-collapse *, .topology-collapse :after, .topology-collapse :before {
+    box-sizing: border-box;
+}
+.topology-collapse .collapse-title-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+}
+.topology-collapse .collapse-title-panel div:first-child {
+      font-weight: bold;
+      font-size: 14px;
+}
+.topology-collapse .collapse-title-panel:hover div:first-child {
+      color: #1890ff;
+}
+

@@ -1,0 +1,62 @@
+.topology-layout {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  line-height: 2;
+  z-index: 999;
+}
+.topology-layout *,
+  .topology-layout *:before,
+  .topology-layout *:after {
+    box-sizing: border-box;
+    margin: 0;
+}
+.topology-layout .headers {
+    display: flex;
+    background-color: #f8f8f8;
+    font-size: 0.13rem;
+    height: 0.4rem;
+}
+.topology-layout .headers .full {
+      flex: 1;
+}
+.topology-layout .headers .logo img {
+      height: 0.22rem;
+      position: relative;
+      top: -0.04rem;
+}
+.topology-layout .el-menu-item,
+  .topology-layout .el-submenu__title {
+    color: #314659 !important;
+    font-size: 0.13rem;
+    padding: 0 0.1rem;
+    height: 0.39rem !important;
+    line-height: 0.39rem !important;
+}
+.topology-layout .el-menu-item.separator,
+    .topology-layout .el-submenu__title.separator {
+      border-top: 1px solid #e8e8e8;
+      margin: 0 0.1rem;
+      height: 0.01rem !important;
+      line-height: 0.01rem !important;
+}
+.topology-layout .el-menu-item a,
+    .topology-layout .el-submenu__title a {
+      text-decoration: none;
+      color: #314659;
+}
+.topology-layout .el-menu-item .iconfont,
+    .topology-layout .el-submenu__title .iconfont {
+      color: #314659;
+      font-size: 0.26rem;
+}
+

@@ -1,0 +1,86 @@
+.ts-dropdown.topology-dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.ts-dropdown.topology-dropdown .dropdown-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+.ts-dropdown.topology-dropdown.ts-dropdown-group {
+    text-align: left;
+}
+.ts-dropdown.topology-dropdown .icon-group {
+    line-height: 25px;
+    height: 25px;
+}
+.ts-dropdown.topology-dropdown i {
+    line-height: 25px;
+}
+.ts-dropdown.topology-dropdown.active-method-hover:hover .dropdown {
+    display: block;
+}
+.ts-dropdown.topology-dropdown:hover {
+    color: #1E9FFF;
+}
+.ts-dropdown.topology-dropdown span.title {
+    font-size: 12px;
+    line-height: 1em;
+}
+.ts-dropdown.topology-dropdown span.title.title-left {
+      text-align: left;
+}
+.ts-dropdown.topology-dropdown svg {
+    height: 15px;
+}
+.ts-dropdown.topology-dropdown .dropdown {
+    position: absolute;
+    display: none;
+    width: auto;
+    min-width: calc(100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    background-color: #fff;
+    padding: 8px 0;
+    left: 0;
+    top: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.ts-dropdown.topology-dropdown .dropdown.active {
+      display: block;
+}
+.ts-dropdown.topology-dropdown .dropdown .item {
+      line-height: 30px;
+      padding: 0 15px;
+      font-size: 13px;
+      color: #595959;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 30px;
+      box-sizing: border-box;
+}
+.ts-dropdown.topology-dropdown .dropdown .item.hover:hover {
+        background-color: #f8f8f8;
+}
+.ts-dropdown.topology-dropdown .dropdown .item:hover {
+        color: #1E9FFF;
+}
+.ts-dropdown.topology-dropdown .dropdown .item.divider {
+        width: calc(100% - 30px);
+        height: 0.5px;
+        background-color: #e5e5e5;
+        margin: 5px 15px;
+}
+

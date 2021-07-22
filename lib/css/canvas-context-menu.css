@@ -1,0 +1,35 @@
+.menus.topology-menus {
+  color: #000;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  text-align: left;
+  padding: 8px 0;
+}
+.menus.topology-menus > div {
+    line-height: 2.2;
+}
+.menus.topology-menus > div a {
+      color: #314659;
+      display: block;
+      padding: 0 2px;
+      text-decoration: none;
+      cursor: pointer;
+}
+.menus.topology-menus > div a:hover {
+        color: #1890ff;
+}
+.menus.topology-menus > div a.flex {
+        display: flex;
+}
+.menus.topology-menus > div a.disabled {
+        color: #ccc;
+        cursor: default;
+}
+.menus.topology-menus .line {
+    background-color: transparent !important;
+    padding: 0;
+    margin: 5px 0;
+    border-top: 1px solid #eee;
+}
+
