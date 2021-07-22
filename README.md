@@ -110,6 +110,7 @@ rotateCursor|鼠标图标路径|String|N|-|
 bkColor|背景颜色|String|N|-|#f8f8f8
 logo|图标|String|N|-|/favicon.ico
 valuePrecision|数值精度|Number|N|-|0
+extendIcons|扩展图标,即为在iconfont下载图标库里面的xx.json文件格式|Array|N|-|-
 
 
 ### <span id="props-uploadImage">UploadImage Function</span>
