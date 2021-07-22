@@ -1,13 +1,15 @@
 <template>
-    <div class="select-icons-card" >
+    <div class="topology-select-icons-card">
         <span class="select-icon-title">
-            <span>选择字体图标</span>  <span class="btn-cancel" @click="handleCancel">返回</span></span>
+            <span>选择字体图标</span>
+            <span class="btn-cancel" @click="handleCancel">返回</span>
+        </span>
         <el-scrollbar class="icon-list">
             <collapse
                     class="icon-group"
                     v-for="(item,index) in iconModules"
                     :key="index"
-                    :title="item.label"
+                    :title="item.label || item.name"
             >
                 <template slot="main">
                     <div class="icon-group-list">
@@ -34,13 +36,14 @@
         components: {
             Collapse
         },
+        inject: ['config'],
         data() {
             return {
-                iconModules: iconModules,
+                iconModules: this.getIconModules(),
             }
         },
         created() {
-            console.log(iconModules)
+            console.log(this.config)
         },
         mounted() {
         },
@@ -58,13 +61,24 @@
             /** 关闭图标选择框 */
             handleCancel() {
                 this.$emit('cancel');
+            },
+            getIconModules() {
+                let iconModuleList = iconModules;
+                for (let item of this.config.extendIcons) {
+                    if (typeof item === 'object') {
+                        if (item.name && item.fontFamily && typeof item.glyphs === 'object') {
+                            iconModuleList[item.name] = item;
+                        }
+                    }
+                }
+                return iconModuleList;
             }
         }
     }
 </script>
 
-<style lang="scss" scoped>
-    .select-icons-card {
+<style lang="scss">
+    .topology-select-icons-card {
         width: 100%;
         height: calc(100vh - 90px);
 
@@ -89,6 +103,7 @@
 
         .icon-list {
             height: calc(100vh - 120px);
+
             .icon-group-list {
                 padding: 20px;
 

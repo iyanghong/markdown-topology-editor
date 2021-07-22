@@ -6,13 +6,19 @@ import { register as registerActivity } from '@topology/activity-diagram'
 import { register as registerSequence } from '@topology/sequence-diagram'
 import { register as registerChart } from '@topology/chart-diagram';
 import { register as registerClass } from '../packages/ClassDiagram'
-import * as echarts from 'echarts'
+import { loadJS } from '@topology/core';
+// import * as echarts from 'echarts'
+export {saveAs} from 'file-saver'
+
 export function canvasRegister() {
     registerFlow()
     registerActivity()
     registerSequence()
     registerClass()
-    registerChart(echarts)
+    if(!window.echarts){
+        loadJS('https://cdn.bootcdn.net/ajax/libs/echarts/4.9.0-rc.1/echarts.min.js', null, true);
+    }
+    registerChart()
 }
 
 export const Tools = [

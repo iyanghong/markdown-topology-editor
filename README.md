@@ -16,10 +16,10 @@ $ npm install markdown-topology-editor --save
         :value.sync="content"
     ></markdown-editor>
 </template>
-import {markdownEditor} from 'markdown-topology-editor'
+import {MarkdownEditor} from 'markdown-topology-editor'
 export default {
     components: {
-        markdownEditor
+        MarkdownEditor
     },
     data(){
         return {
@@ -44,10 +44,10 @@ export default {
         @success="handleSuccess"
     ></topology-editor>
 </template>
-import {topologyEditor} from 'markdown-topology-editor'
+import {TopologyEditor} from 'markdown-topology-editor'
 export default {
     components: {
-        topologyEditor
+        TopologyEditor
     },
     data(){
         return {
@@ -68,10 +68,10 @@ export default {
 <template>
     <topology-view :data="data"/>
 </template>
-import {topologyView} from 'markdown-topology-editor'
+import {TopologyView} from 'markdown-topology-editor'
 export default {
     components: {
-        topologyView
+        TopologyView
     },
     data(){
         return {

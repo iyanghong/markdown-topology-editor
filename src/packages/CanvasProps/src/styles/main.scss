@@ -1,12 +1,11 @@
-.props-container {
+.topology-props-container {
   height: 100%;
 
   .el-tabs {
     height: 100%;
-
   }
-  .line-props-tabs,
-  .node-props-tabs {
+  .topology-line-props-tabs,
+  .topology-node-props-tabs {
     .form-item-number {
       .el-input-number__decrease, .el-input-number__increase {
         display: none;

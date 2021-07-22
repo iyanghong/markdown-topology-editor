@@ -50,6 +50,8 @@ export default {
 
     logo : '/favicon.ico',
 
-    valuePrecision : 0
+    valuePrecision : 0,
+
+    extendIcons : []
 
 }
